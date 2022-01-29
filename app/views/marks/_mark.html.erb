@@ -1,8 +1,17 @@
 <% @marks.each do |mark| %>
-  <tr id="mark">
+  <tr id="mark-<%= mark.id %>">
     <td><a href="<%= mark.url %>" target="_blank"><%= mark.url %></a></td>
+    <td><%= mark.category.name %></td>
+    <td><%= mark.type.name %></td>
+    <td>
+      <% if mark.category.status == 1 %>
+        Private
+        <% else %>
+        Públic
+      <% end %>
+    </td>
     <td><%= link_to 'Show', mark, remote: true %></td>
-    <td><%= link_to 'Edit', edit_mark_path(mark) %></td>
-    <td><%= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_mark_path(mark), remote: true %></td>
+    <td><%= link_to 'Destroy', mark, method: :delete, data: { confirm: "¿Desea eliminar el marcador?\n\n#{mark.url}" } %></td>
   </tr>
 <% end %>

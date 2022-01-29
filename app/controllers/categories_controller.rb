@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show edit update destroy ]
+  before_action :set_select, only: %i[ new edit create update index ]
 
   # GET /categories or /categories.json
   def index
@@ -65,6 +66,10 @@ class CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:name, :private)
+      params.require(:category).permit(:name, :status, :category_id)
+    end
+
+    def set_select
+      @statuses = Category.statuses.keys.to_a
     end
 end

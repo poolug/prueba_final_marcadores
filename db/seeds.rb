@@ -9,7 +9,7 @@
 5.times do |i|
   Category.create!(
     name: "categoria-#{i+1}",
-    private: rand(0..1)
+    status: rand(0..1)
   )
 end
 

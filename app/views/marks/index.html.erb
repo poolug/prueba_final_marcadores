@@ -1,12 +1,21 @@
-<h1>Marks</h1>
-
+<h1>Guardar Marcador</h1>
 <%= render 'marks/form', mark: @mark %>
-
+<br>
+<div>
+  <%= link_to 'Go to Categories', categories_path %>
+  <%= link_to 'Go to Types', types_path %>
+</div>
+<hr>
+<br>
+<h1>Marcadores</h1>
 <div>
   <table>
     <thead>
       <tr>
         <th>Url</th>
+        <th>Category</th>
+        <th>Type</th>
+        <th>Status</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -15,7 +24,3 @@
     </tbody>
   </table>
 </div>
-
-<br>
-
-<%#= link_to 'New Mark', new_mark_path %>

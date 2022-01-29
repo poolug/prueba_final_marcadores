@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2022_01_27_001944) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.integer "private"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"

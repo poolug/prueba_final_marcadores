@@ -15,9 +15,6 @@ class MarksController < ApplicationController
 
   # GET /marks/new
   def new
-    @mark = Mark.new
-    @types = Type.all
-    @categories = Category.all
   end
 
   # GET /marks/1/edit
@@ -38,15 +35,7 @@ class MarksController < ApplicationController
 
   # PATCH/PUT /marks/1 or /marks/1.json
   def update
-    respond_to do |format|
-      if @mark.update(mark_params)
-        format.html { redirect_to mark_url(@mark), notice: "Mark was successfully updated." }
-        format.json { render :show, status: :ok, location: @mark }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @mark.errors, status: :unprocessable_entity }
-      end
-    end
+    @mark.update(mark_params)
   end
 
   # DELETE /marks/1 or /marks/1.json
