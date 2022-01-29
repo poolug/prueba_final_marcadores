@@ -1,0 +1,8 @@
+<% @marks.each do |mark| %>
+  <tr id="mark">
+    <td><a href="<%= mark.url %>" target="_blank"><%= mark.url %></a></td>
+    <td><%= link_to 'Show', mark, remote: true %></td>
+    <td><%= link_to 'Edit', edit_mark_path(mark) %></td>
+    <td><%= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>

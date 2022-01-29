@@ -1,0 +1,4 @@
+// seleccióna el id my_marks y renderea el marcador creado
+$('#my_marks').html('<%= escape_javascript render @mark %>')
+// vacía el input cuando se crea el marcador
+$('#mark_url').val('')
