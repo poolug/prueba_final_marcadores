@@ -1,24 +1,4 @@
-# README
+- Modelo físico
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![image](https://user-images.githubusercontent.com/83673595/151884004-6af106d2-daf8-4fd1-b81f-2cdefcf30903.png)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
