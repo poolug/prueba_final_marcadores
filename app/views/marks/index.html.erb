@@ -5,8 +5,14 @@
   <%= link_to 'Go to Categories', categories_path %>
   <%= link_to 'Go to Types', types_path %>
 </div>
-<hr>
 <br>
+<hr>
+
+<div>
+  <h2>Type of Marks</h2>
+  <%= column_chart @group_ty_types %>
+</div>
+<hr>
 <h1>Marcadores</h1>
 <div>
   <table>
@@ -14,6 +20,7 @@
       <tr>
         <th>Url</th>
         <th>Category</th>
+        <th>Sub Category</th>
         <th>Type</th>
         <th>Status</th>
         <th colspan="3"></th>

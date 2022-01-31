@@ -2,17 +2,22 @@
 
   <div class="field">
     <%= form.label :url %>
-    <%= form.text_field :url %>
+    <%= form.url_field :url %>
   </div>
 
   <div class="field">
     <%= form.label :category_id %>
-    <%= form.collection_select :category_id, @categories, :id, :name%>
+    <%= form.collection_select :category_ids, Category.all_fathers, :id, :name, include_blank: true%>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id, "Sub Category" %>
+    <%= form.collection_select :category_ids, Category.all_children, :id, :name, include_blank: true%>
   </div>
 
   <div class="field">
     <%= form.label :type_id %>
-    <%= form.collection_select :type_id, @types, :id, :name%>
+    <%= form.collection_select :type_id, @types, :id, :name, include_blank: true%>
   </div>
 
   <div class="actions">

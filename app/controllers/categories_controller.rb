@@ -9,6 +9,13 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
+    @categories = Category.includes(:marks) 
+    @mark = Mark.find(params[:id])
+    @fetchCategory = {  category_name: @category.name,
+                        subcategory_name: Category.all_children,
+                        mark_name: @mark.url,
+                      }
+    render json: @fetchCategory
   end
 
   # GET /categories/new

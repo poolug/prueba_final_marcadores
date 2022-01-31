@@ -3,10 +3,11 @@ class MarksController < ApplicationController
 
   # GET /marks or /marks.json
   def index
-    @marks = Mark.all
+    @marks = Mark.includes(:category, :type)
     @mark = Mark.new
     @types = Type.all
     @categories = Category.all
+    @group_by_types = Type.joins(:marks).group(:url).count
   end
 
   # GET /marks/1 or /marks/1.json
@@ -15,6 +16,7 @@ class MarksController < ApplicationController
 
   # GET /marks/new
   def new
+    @mark = Mark.new
   end
 
   # GET /marks/1/edit
@@ -43,7 +45,7 @@ class MarksController < ApplicationController
     @mark.destroy
 
     respond_to do |format|
-      format.html { redirect_to marks_url, notice: "Mark was successfully destroyed." }
+      format.html { redirect_to marks_url }
       format.json { head :no_content }
     end
   end
