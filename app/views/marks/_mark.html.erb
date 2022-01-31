@@ -2,7 +2,9 @@
   <tr id="mark-<%= mark.id %>">
     <td><a href="<%= mark.url %>" target="_blank"><%= mark.url %></a></td>
     <td><%= mark.category.name %></td>
-    <td><%= mark.category.category_id %></td>
+    <td>
+      <%= mark.sub_category_name %>
+    </td>
     <td><%= mark.type.name %></td>
     <td>
       <% if mark.category.status == "privateStatus" %>

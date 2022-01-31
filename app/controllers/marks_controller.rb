@@ -58,6 +58,6 @@ class MarksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mark_params
-      params.require(:mark).permit(:url, :category_id, :type_id)
+      params.require(:mark).permit(:url, :category_id, :type_id, :sub_category)
     end
 end

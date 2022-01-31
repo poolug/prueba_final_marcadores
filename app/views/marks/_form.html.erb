@@ -11,8 +11,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :category_id, "Sub Category" %>
-    <%= form.collection_select :category_id, Category.all_children, :id, :name, include_blank: true%>
+    <%= form.label :sub_category, "Sub Category" %>
+    <%= form.collection_select :sub_category, Category.all_children, :id, :name, include_blank: true%>
   </div>
 
   <div class="field">

@@ -10,4 +10,5 @@ class Category < ApplicationRecord
   scope :all_fathers, -> {where(category_id: nil)}
 
   scope :all_children, -> {where.not(category_id: nil)}
+
 end
