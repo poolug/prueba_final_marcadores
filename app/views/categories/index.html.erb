@@ -15,16 +15,8 @@
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td>
-          <% if category.category_id.nil? %>
-            <%= category.name %>
-          <% end %>
-        </td>
-        <td>
-          <% if category.category_id.present? %>
-            <%= category.name %>
-          <% end %>
-        </td>
+        <td><%= category.name %></td>
+        <td><%= category.sub_categories %></td>
         <td>
           <% if category.status == "privateStatus" %>
             Private

@@ -29,11 +29,13 @@ end
 
 type = Type.all
 category = Category.all.where(category_id: nil)
+sub_category = Category.all.where.not(category_id: nil)
 
 20.times do |i|
   Mark.create!(
     url: "url-#{i+1}",
     category: category.sample,
-    type: type.sample
+    type: type.sample,
+    sub_category: sub_category.sample.id
   )
 end

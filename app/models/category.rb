@@ -11,4 +11,27 @@ class Category < ApplicationRecord
 
   scope :all_children, -> {where.not(category_id: nil)}
 
+  def sub_category_name
+    if !Mark.sub_category.nil?
+      c = Mark.find(Mark.sub_category)
+      if c.present?
+        return c.name
+      else
+        return "not found"
+      end
+    end
+  end
+
+  def sub_categories
+    if !self.category_id.present?
+      c = Category.find_by(category_id)
+      if c.present?
+        return c.name
+      else
+        return "not found"
+      end
+    end
+  end
+  
+
 end

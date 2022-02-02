@@ -14,4 +14,5 @@ class Mark < ApplicationRecord
       end
     end
   end
+
 end
