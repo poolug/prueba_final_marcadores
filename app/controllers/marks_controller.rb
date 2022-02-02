@@ -7,7 +7,7 @@ class MarksController < ApplicationController
     @mark = Mark.new
     @types = Type.all
     @categories = Category.all
-    @group_by_types = Type.joins(:marks).group(:url).count
+    @group_by_types = Type.joins(:marks).group(:name).count
   end
 
   # GET /marks/1 or /marks/1.json
